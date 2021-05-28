@@ -50,7 +50,7 @@ nav{
 
 #nav-spacing-2{
     /* border:1px solid black; */
-    animation: pageLoadNav 1s forwards ease-in-out;
+    animation: pageLoadNav 1s 1s forwards ease-in-out;
 }
 /* Links */
 .nav-links{
