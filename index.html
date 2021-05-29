@@ -1,64 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="swar.css">
-    <title>Animations</title>
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-flow: column;
+            background: white;
+        }
+
+        :root{
+            --sec1-basis: 350px;
+        }
+        /* nav::after{
+            // border: 1px solid black; /   /
+            content: "";
+            background:rgb(0, 0, 0);
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -2;
+        }
+        nav::before{
+            content: "";
+            background: url('https://source.unsplash.com/1600x900/?light,nature') no-repeat center center/cover ;
+            position: absolute;
+            top:0px;
+            left:0px;
+            opacity: 0.5;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+        } */
+        nav {
+            position: sticky;
+            top: 0px;
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.548);
+            z-index: 1000;
+        }
+
+        #navlist {
+            display: flex;
+            list-style: none;
+            flex: 1;
+            padding: 15px;
+            /* border: 1px solid white; */
+            margin: 3px 20%;
+            animation: navAnime 1.6s ease-in-out 0.8s 1 forwards;
+        }
+
+        .navlinks {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            flex: 1;
+            padding: 4px 15px;
+            border-radius: 10px;
+        }
+
+        @keyframes navAnime {
+            0% {
+                margin-left: 20%;
+                margin-right:1% ;
+                padding-right: 0;
+            }
+
+            100% {
+                margin: 3px;
+                padding:15px
+            }
+        }
+
+        .navlinks:hover {
+            background: rgba(255, 255, 255, 0.37);
+        }
+
+        #sec-1::after {
+            content: "";
+            background: black;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0.55;
+        }
+
+        #sec-1 {
+            position: relative;
+            bottom: 60px;
+        }
+
+        #sec-1 {
+            background: url(https://source.unsplash.com/1600x900/?pattern,bright) no-repeat center center/cover;
+            display: flex;
+            border: 2px black solid;
+            flex: 1;
+            flex-basis: 100vh;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-direction: column;
+            animation: splashanime 1s ease-in-out 2s 1 forwards;
+        }
+
+        @keyframes splashanime {
+            form {
+                flex-basis: 100vh;
+            }
+
+            to {
+                flex-basis: 350px;
+            }
+        }
+
+        #sec-1>h1 {
+            z-index: 100;
+            font-size: 7rem;
+            position: fixed;
+            margin: 20px;
+            z-index: 1;
+        }
+
+        #sec-1 p {
+            z-index: 100;
+            padding: 10px;
+        }
+
+        #sec-2 {
+            display: flex;
+            flex-basis: 18vh;
+            padding: 0px;
+            font-size: 1.2rem;
+            flex-direction: column;
+            align-items: center;
+
+            z-index: 100;
+        }
+
+        #sec-2 p {
+            font-size: 1rem;
+            padding: 30px;
+        }
+
+        #sec-3 {
+            display: flex;
+            justify-content: space-evenly;
+            flex-basis: 48.8vh;
+            z-index: 100;
+            flex-flow: row nowrap;
+        }
+
+        .box {
+
+            flex-basis: 25%;
+            border: 1px solid grey;
+            box-shadow: -3px 3px 2px -1px rgb(214, 214, 214);
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            box-sizing: content-box;
+            transition: all;
+            flex: 1 1 300px;
+            margin: 20px;
+            max-width: 300px;
+            perspective: 1000px;
+        }
+
+
+        @media (max-width:1025px) {
+            #sec-3 {
+                flex-direction: column;
+                flex: 1 1 100%;
+                align-items: center;
+            }
+
+            .box {
+                max-width: 500px;
+
+            }
+        }
+
+        @media (max-width:695px) {
+            .navlinks {
+                font-size: 13px;
+            }
+
+            #sec-1 h1{
+                font-size: 6rem;
+            }
+
+        }
+
+        @media (max-width:585px) {
+            #navlist{
+                animation: none;
+                margin: 3px;
+            }
+            #sec-1{
+                flex-basis: 70vh;
+                animation-delay: 0.8s;
+            }
+            #sec-1 h1{
+                font-size: 5.5rem;
+            }
+        }
+
+
+
+        .box h1,
+        .box p {
+            padding: 20px;
+            text-align: center;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        #sec-4 {
+            display: flex;
+            flex-basis: 19vh;
+            transition: 1s all;
+        }
+
+        /* .box:hover {
+        } */
+    </style>
 </head>
+
 <body>
+    <nav>
+        <ul id="navlist">
+            <li class="navitem"><a href='#' class='navlinks'>Home</a></li>
+            <li class="navitem"><a href='#' class='navlinks'>About</a></li>
+            <li class="navitem"><a href='#' class='navlinks'>Services</a></li>
+            <li class="navitem"><a href='#' class='navlinks'>Contact Us</a></li>
+        </ul>
+    </nav>
     <header>
-        <nav>
-            <div id='nav-spacing-1'>
 
-            </div>
-            <ul class="nav">
-                <li class="navlist" id="nav-item"><a href="#" class='nav-links'>Home</a></li>
-                <li class="navlist" id="nav-item"><a href="#" class='nav-links'>Services</a></li>
-                <li class="navlist" id="nav-item"><a href="#" class='nav-links'>About</a></li>
-                <li class="navlist" id="nav-item"><a href="#" class='nav-links'>Contact Us</a></li>
-            </ul>
-            <div id='nav-spacing-2'>
-
-            </div>
-        </nav>
     </header>
-    <section id="section1">
-        <div id='sec-1_div-1'>
-
-            <div class="main">
-                <h1 >THE SWAR MUSIC</h1>
-                <p>
-                    The Way Music Is Done
-                </p>
-            </div>
-        </div>
+    <section id="sec-1">
+        <h1>Hello World</h1>
     </section>
-    <section id='MembersSection'>
-        <h1>Our Band Members</h1>
 
-        <div id="MembersDiv">
-            <div class="cards" id="member1">
-                <h2>Adarsh Roy </h2>
+    <section id="sec-2">
+        <h1>Welcome to my blog</h1>
+        <p>Join us At 5pm EST for a day of fun and excitement</p>
+    </section>
+    <section id='sec-3'>
+        <div class="box">
+            <div class="boxfront">
+
+                <h1>Lorem ipsum dolor sit amet.</h1>
             </div>
-            <div class="cards" id="member2">
-                <h2>Bhavya Tyagi</h2>
-            </div>
-            <div class="cards" id="member3">
-                <h2>Dhruv Bharali</h2>
-            </div>
-            <div class="cards" id="member4">
-                <h2>Emmanuel Bennet</h2>
-            </div>
-            <div class="cards" id="member5">
-                <h2>Lucky Sharma</h2>
-            </div>
-            <div class="cards" id="member6">
-                <h2>Soumya Ranjan Patnaik</h2>
+            <div class="boxback">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At vero quia eum iure sed, adipisci eos
+                    cupiditate aspernatur ea eligendi ut. Illum laborum blanditiis, ipsum accusantium amet rem earum
+                    quae?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam voluptatibus at nostrum beatae
+                    doloremque odio perspiciatis doloribus alias reiciendis! Porro magni ullam exercitationem aspernatur
+                    vero nostrum officiis soluta quidem iste!</p>
+
             </div>
         </div>
+        <div class="box">
+            <div class="boxfront">
+
+                <h1>Lorem ipsum dolor sit amet.</h1>
+            </div>
+            <div class="boxback">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At vero quia eum iure sed, adipisci eos
+                    cupiditate aspernatur ea eligendi ut. Illum laborum blanditiis, ipsum accusantium amet rem earum
+                    quae?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam voluptatibus at nostrum beatae
+                    doloremque odio perspiciatis doloribus alias reiciendis! Porro magni ullam exercitationem aspernatur
+                    vero nostrum officiis soluta quidem iste!</p>
+
+            </div>
+        </div>
+        <div class="box">
+            <div class="boxfront">
+
+                <h1>Lorem ipsum dolor sit amet.</h1>
+            </div>
+            <div class="boxback">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At vero quia eum iure sed, adipisci eos
+                    cupiditate aspernatur ea eligendi ut. Illum laborum blanditiis, ipsum accusantium amet rem earum
+                    quae?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam voluptatibus at nostrum beatae
+                    doloremque odio perspiciatis doloribus alias reiciendis! Porro magni ullam exercitationem aspernatur
+                    vero nostrum officiis soluta quidem iste!</p>
+
+            </div>
+        </div>
+    <section id='sec-4'>
 
     </section>
 </body>
+
 </html>
+<!-- url('https://source.unsplash.com/1600x900/?') -->
