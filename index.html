@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World|Soumya</title>
+    <title></title>
     <style>
         * {
             margin: 0;
@@ -18,12 +18,12 @@
             flex-flow: column;
             background: white;
             scroll-behavior: smooth;
-        
         }
 
-        :root{
+        :root {
             --sec1-basis: 350px;
         }
+
         /* nav::after{
             // border: 1px solid black; /   /
             content: "";
@@ -75,13 +75,13 @@
         @keyframes navAnime {
             0% {
                 margin-left: 20%;
-                margin-right:1% ;
+                margin-right: 1%;
                 padding-right: 0;
             }
 
             100% {
                 margin: 3px;
-                padding:15px
+                padding: 15px
             }
         }
 
@@ -160,6 +160,7 @@
         #sec-3 {
             display: flex;
             justify-content: space-evenly;
+            align-items: center;
             flex-basis: 48.8vh;
             z-index: 100;
             flex-flow: row nowrap;
@@ -173,11 +174,13 @@
             border-radius: 5px;
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             box-sizing: content-box;
             transition: all;
             flex: 1 1 300px;
-            margin: 20px;
-            max-width: 300px;
+            margin: 30px;
+            max-width: 330px;
             perspective: 1000px;
         }
 
@@ -200,23 +203,24 @@
                 font-size: 13px;
             }
 
-            #sec-1 h1{
+            #sec-1 h1 {
                 font-size: 6rem;
             }
 
         }
 
         @media (max-width:585px) {
-            #navlist{
+            #navlist {
                 animation: none;
                 margin: 3px;
             }
-            #sec-1{
+
+            #sec-1 {
                 flex-basis: 70vh;
-                animation-delay: 1.5s;
-                animation-duration:1.35s;
+                animation-delay: 0.8s;
             }
-            #sec-1 h1{
+
+            #sec-1 h1 {
                 font-size: 5.5rem;
             }
         }
@@ -233,7 +237,7 @@
 
         #sec-4 {
             display: flex;
-            flex-basis: 19vh;
+            flex-basis: 21vh;
             transition: 1s all;
         }
 
@@ -246,7 +250,7 @@
     <nav>
         <ul id="navlist">
             <li class="navitem"><a href='#' class='navlinks'>Home</a></li>
-            <li class="navitem"><a href='#sec-2' class='navlinks'>About</a></li>
+            <li class="navitem"><a href='#sec-2 ' class='navlinks'>About</a></li>
             <li class="navitem"><a href='#' class='navlinks'>Services</a></li>
             <li class="navitem"><a href='#' class='navlinks'>Contact Us</a></li>
         </ul>
@@ -305,7 +309,9 @@
 
             </div>
         </div>
-    <section id='sec-4'>
+    </section>
+
+    <section id="sec-4">
 
     </section>
 </body>
